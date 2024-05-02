@@ -1,0 +1,40 @@
+<!-- Q..  What is XML DOM? Make a institue.xml document with a 2 institute, having five departments 
+          which includes name of the course, code of the course and year. Make the DOM tree for institute.xml. -->
+
+
+<!-- 
+XML DOM (Document Object Model) is a programming interface for XML documents. 
+It represents the structure of an XML document as a tree-like hierarchical structure,
+where each node in the tree corresponds to a part of the XML document. XML DOM allows developers
+to manipulate XML documents using programming languages like JavaScript, Python, Java, etc.,
+by providing methods and properties to access, modify, and traverse XML elements. 
+-->
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<institutes>
+  <institute name="Institute A">
+    <department>
+      <course>
+        <name>Computer Science</name>
+        <code>CSE101</code>
+        <year>2023</year>
+      </course>
+      <!-- More courses for Institute A -->
+    </department>
+    <!-- More departments for Institute A -->
+  </institute>
+  
+  <institute name="Institute B">
+    <department>
+      <course>
+        <name>Electrical Engineering</name>
+        <code>EE201</code>
+        <year>2024</year>
+      </course>
+      <!-- More courses for Institute B -->
+    </department>
+    <!-- More departments for Institute B -->
+  </institute>
+</institutes>
+

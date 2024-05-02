@@ -1,0 +1,67 @@
+<!--
+    Q--  How can you apply shadows on canvas? Describe it. Create the 2 text on the HTML5 canvas 
+    with the respective shadow shown below with coloring of blue to "Welcome to ITER" and yellow 
+    to "Modern Web Development Workshop-2". 
+-->
+
+<!-- To apply shadows on the HTML5 canvas, you can use the shadowColor, shadowBlur, shadowOffsetX, and shadowOffsetY properties of the CanvasRenderingContext2D object (ctx).
+
+Here's how you can describe and apply shadows on canvas text:
+
+Description:
+shadowColor: Specifies the color of the shadow.
+shadowBlur: Sets the blur level of the shadow (0 means no blur).
+shadowOffsetX and shadowOffsetY: Define the horizontal and vertical distance of the shadow from the text. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Text Shadows</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+      }
+
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="600" height="200"></canvas>
+
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      // Set shadow properties
+      ctx.shadowColor = "blue";
+      ctx.shadowBlur = 10;
+      ctx.shadowOffsetX = 5;
+      ctx.shadowOffsetY = 5;
+
+      // Draw "Welcome to ITER" text with shadow
+      ctx.font = "bold 36px Arial";
+      ctx.fillStyle = "blue";
+      ctx.fillText("Welcome to ITER", 50, 50);
+
+      // Reset shadow properties
+      ctx.shadowColor = "yellow";
+      ctx.shadowBlur = 15;
+      ctx.shadowOffsetX = 8;
+      ctx.shadowOffsetY = 8;
+
+      // Draw "Modern Web Development Workshop-2" text with shadow
+      ctx.font = "italic 28px Arial";
+      ctx.fillStyle = "yellow";
+      ctx.fillText("Modern Web Development Workshop-2", 50, 100);
+    </script>
+  </body>
+</html>

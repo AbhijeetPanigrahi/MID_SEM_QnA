@@ -1,0 +1,59 @@
+<!-- 
+lineCap Property:
+The lineCap property determines the shape of the line endings.
+Possible values are 'butt', 'round', and 'square'.
+'butt': Ends the line at the last point.
+'round': Rounds off the line endings.
+'square': Extends the line endings beyond the last point with a squared-off edge.
+
+lineJoin Property:
+The lineJoin property specifies the type of corner created when two lines meet.
+Possible values are 'round', 'bevel', and 'miter'.
+'round': Creates a rounded corner.
+'bevel': Creates a beveled corner with a flat edge.
+'miter': Creates a sharp corner that extends to a point where the outer edges of the lines meet. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas lineCap and lineJoin</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+      }
+
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      // Set lineCap and lineJoin properties
+      ctx.lineWidth = 20;
+      ctx.lineCap = "round"; // rounded line ends
+      ctx.lineJoin = "bevel"; // beveled corners
+
+      // Draw two intersecting lines
+      ctx.beginPath();
+      ctx.moveTo(50, 50);
+      ctx.lineTo(250, 50);
+      ctx.lineTo(150, 150);
+      ctx.lineTo(50, 150);
+      ctx.closePath();
+      ctx.stroke();
+    </script>
+  </body>
+</html>
